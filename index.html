@@ -6,7 +6,8 @@
   <title>오디오 시각화</title>
   <style>
     body {
-      filter: blur(40px);
+      width: 100%;
+      filter: blur(10px);
       display: flex;
       justify-content: center;
       align-items: flex-end;
@@ -16,14 +17,13 @@
       overflow: hidden;
     }
     .bar {
-      border-radius: 10px 10px 0px 0px;
-      width: 60px;
+      width: 2.8vw;
       height: 0;
       background-color: #4CAF50;
       margin: 0 1px;
       display: inline-block;
       transform-origin: bottom;
-      transition: height 0.07s ease;
+      transition: height 0.06s ease;
     }
   </style>
 </head>
@@ -58,7 +58,7 @@
 
           const bars = document.querySelectorAll('.bar');
           bars.forEach((bar, index) => {
-            const value = dataArray[index] / 195; // 0 ~ 1 사이로 정규화
+            const value = dataArray[index] / 185; // 0 ~ 1 사이로 정규화
             const height = Math.max(value * 500, 10); // 최소 높이 설정
             bar.style.height = `${height}px`;
 
@@ -77,9 +77,9 @@
 
     setupAudio();
 
-    document.addEventListener('contextmenu', (event) => {
-      event.preventDefault();
-    });
+    // document.addEventListener('contextmenu', (event) => {
+    //   event.preventDefault();
+    // });
 
   </script>
 </body>
